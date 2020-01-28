@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+
+  server:
+    build:
+      context: ../server
+      dockerfile: Dockerfile
+    image: test/server:latest
+    container_name: test-ci-server
+    restart: always
+    networks:
+      dis_net:
+        ipv4_address: 172.16.201.20
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+
+  client:
+    build:
+      context: ../client
+      dockerfile: Dockerfile
+    image: test/client:latest
+    container_name: test-ci-client
+    restart: always
+    networks:
+      dis_net:
+        ipv4_address: 172.16.201.100
+    expose:
+      - 80
+    ports:
+      - 80:80
+    links:
+      - server
+
+##
+
+##
+##
+networks:
+  dis_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      -
+        subnet: 172.16.201.0/24
+##
+##
