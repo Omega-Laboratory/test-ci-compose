@@ -3,34 +3,30 @@ version: '3'
 services:
 
   server:
-    build:
-      context: ../server
-      dockerfile: Dockerfile
-    image: test/server:latest
+
+    image: 951264400542.dkr.ecr.us-east-2.amazonaws.com/app2:latest
     container_name: test-ci-server
     restart: always
     networks:
       dis_net:
         ipv4_address: 172.16.201.20
     expose:
-      - 3000
+      - 2501
     ports:
-      - 3000:3000
+      - 2501:2501
 
   client:
-    build:
-      context: ../client
-      dockerfile: Dockerfile
-    image: test/client:latest
+
+    image: 951264400542.dkr.ecr.us-east-2.amazonaws.com/app2
     container_name: test-ci-client
     restart: always
     networks:
       dis_net:
         ipv4_address: 172.16.201.100
     expose:
-      - 80
+      - 82
     ports:
-      - 80:80
+      - 82:82
     links:
       - server
 
