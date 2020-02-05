@@ -3,7 +3,10 @@ version: '3'
 services:
 
   server:
-    image: omegalab/test-ci-server:latest
+    build:
+      context: ../server
+      dockerfile: Dockerfile
+    image: test/server:latest
     container_name: test-ci-server
     restart: always
     networks:
@@ -15,7 +18,10 @@ services:
       - 3000:3000
 
   client:
-    image: omegalab/test-ci-client:latest
+    build:
+      context: ../client
+      dockerfile: Dockerfile
+    image: test/client:latest
     container_name: test-ci-client
     restart: always
     networks:

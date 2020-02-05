@@ -3,7 +3,7 @@ version: '3'
 services:
 
   server:
-    image: omegalab/test-ci-server:latest
+    image: omegalab/test-ci-server:develop
     container_name: test-ci-server
     restart: always
     networks:
