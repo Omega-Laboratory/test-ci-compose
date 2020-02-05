@@ -1,3 +1,5 @@
+#version staging
+
 version: '3'
 
 services:
@@ -15,7 +17,7 @@ services:
       - 3000:3000
 
   client:
-    image: omegalab/test-ci-client:latest
+    image: omegalab/test-ci-client:develop
     container_name: test-ci-client
     restart: always
     networks:
