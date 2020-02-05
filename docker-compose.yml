@@ -3,12 +3,7 @@ version: '3'
 services:
 
   server:
-<<<<<<< HEAD
     image: omegalab/test-ci-server:latest
-=======
-
-    image: 951264400542.dkr.ecr.us-east-2.amazonaws.com/app2:latest
->>>>>>> 8da6d586183284f50c4cb94a36e5c6d26fb3b999
     container_name: test-ci-server
     restart: always
     networks:
@@ -20,12 +15,7 @@ services:
       - 2501:2501
 
   client:
-<<<<<<< HEAD
     image: omegalab/test-ci-client:latest
-=======
-
-    image: 951264400542.dkr.ecr.us-east-2.amazonaws.com/app2
->>>>>>> 8da6d586183284f50c4cb94a36e5c6d26fb3b999
     container_name: test-ci-client
     restart: always
     networks:
