@@ -22,9 +22,9 @@ services:
       dis_net:
         ipv4_address: 172.16.201.100
     expose:
-      - 82
+      - 80
     ports:
-      - 82:82
+      - 80:80
     links:
       - server
 
