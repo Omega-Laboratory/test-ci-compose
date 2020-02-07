@@ -10,9 +10,9 @@ services:
       dis_net:
         ipv4_address: 172.16.201.20
     expose:
-      - 2501
+      - 3000
     ports:
-      - 2501:2501
+      - 3000:3000
 
   client:
     image: omegalab/test-ci-client:latest
